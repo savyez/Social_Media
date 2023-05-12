@@ -5,6 +5,8 @@ A Social Multi media webapp which allows user to create his/her account on the a
 - Used _**django**_ for the backend framework and _**JS**_ for the backend logics of templates, _**HTML and CSS**_ templates for the frontend.
 
 # How to run?
-1. Open terminal
-2. Copy folder link
-3. type `python manage.py runserver`
+1. Copy the folder link where you want to create the copy
+2. Open terminal
+3. Go to that disk drive by typing `{disk driver}:`
+4. Now access your folder by typing `cd {paste the folder link}`
+5. type `python manage.py runserver`
