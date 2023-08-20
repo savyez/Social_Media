@@ -58,16 +58,21 @@ def index(request):
 
 
 @login_required(login_url='signin')
-def upload(request):
+def handle_upload(request):
     if request.method == 'POST':
-        user = request.user.username
-        image = request.FILES.get('image_upload')
-        caption = request.POST['caption']
+        upload_type = request.POST.get('upload_type')
 
-        new_post = Post.objects.create(user=user, image=image, caption=caption)
-        new_post.save()
+        if upload_type == 'post':
+            user = request.user.username
+            image = request.FILES.get('image_upload')
+            caption = request.POST['caption']
 
-        return redirect('/')
+            new_post = Post.objects.create(user=user, image=image, caption=caption)
+            new_post.save()
+
+            return redirect('/')
+        elif upload_type == 'cover':
+            pass
     else:
         return redirect('/')
 
